@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>仿百度音乐上的瀑布流</title>
+		<script src="../javascript/jquery-2.1.1.min.js"></script>
+		<script src="../javascript/runningWater.js"></script>
+		<script src="../javascript/baidu-music.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/runningWater.css">
+		<style>
+			a{
+				text-decoration: none;
+			}
+			.water-running .water-running-block h4.baidu-music-h{
+				font-weight: bold;
+				font-size: 14px;
+				text-align: left;
+				color: #855d5b;
+				border: none;
+				padding-bottom: 0px;
+				height: 21px;
+			}
+			.water-running .water-running-block h4.baidu-music-h a{
+				font-weight: bold;
+				font-size: 14px;
+				text-align: left;
+				color: #855d5b;
+			}
+			.singer-message{
+				margin-top: 0px;
+				font-size: 12px;
+				height: 16px;
+				line-height: 16px;
+				margin-bottom: 20px;
+				text-align: left;
+				color: #d1929d;
+			}
+			.listener-number{
+				background-image: url("../image/collection.jpg");
+				background-position: center;
+				width: 16px;
+				height: 16px;
+				vertical-align: middle;
+				display: inline-block;
+				margin-right: 5px;
+			}
+			.listen-time{
+				background-image: url("../image/listener.jpg");
+				background-position: center;
+				width: 16px;
+				height: 16px;
+				vertical-align: middle;
+				display: inline-block;
+				margin-right: 5px;
+			}
+			ul.sing-list{
+				margin: 0px;
+				padding: 0px;	
+			}
+			ul.sing-list li{
+				height: 42px;
+				line-height: 42px;
+				background: url("http://mu3.bdstatic.com/static/i/F1uUPObX.png");
+				background-repeat: repeat-x;
+				font-size: 12px;
+				text-align: left;
+				padding-left: 10px;
+				position: relative;
+				list-style: none;
+			}
+			ul.sing-list li a{
+				font-size: 12px;
+				text-align: left;
+				color: #855d5b;
+			}
+			.play-icon{
+				height: 16px;
+				line-height: 16px;
+				float: right;
+				position: absolute;
+				top: 30%;
+				width: 16px;
+				right: 10px;
+			}
+			.music-play{
+				background-image: url("../image/play.jpg");
+				background-position: center;
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+			}
+			.water-running{
+				margin-left: 85px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="water-running" style="width:1200px">
+			<div class="water-running-block">
+				<div class="image-block">	
+					<img src="http://b.hiphotos.baidu.com/ting/s%3D210/sign=8f98a6d47fd98d1072d40b30113fb807/b2de9c82d158ccbfcdc485121ad8bc3eb1354199.jpg" width="210" height="210">
+				</div>		
+				<div class="message-content">
+					<h4 class="baidu-music-h">
+						<a href="">董贞</a>
+					</h4>
+					<p class="singer-message">
+						<i class="listener-number"></i><span>45351</span>人
+						<i class="listen-time"></i><span>25038709</span>
+					</p>
+					<ul class="sing-list">
+						<li>
+							<span>
+								<a href="">星辰泪—《星辰变2》主题曲</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="water-running-block">
+				<div class="image-block">	
+					<img src="http://h.hiphotos.baidu.com/ting/s%3D210/sign=2cb963e9dfc451daf2f60bea86fc52a5/4b90f603738da9770e7e7d9cb251f8198618e330.jpg" width="210" height="210">
+				</div>
+				<div class="message-content">
+					<h4 class="baidu-music-h">
+						<a href="">墨明棋妙</a>
+					</h4>
+					<p class="singer-message">
+						<i class="listener-number"></i><span>45351</span>人
+						<i class="listen-time"></i><span>25038709</span>
+					</p>
+					<ul class="sing-list">
+						<li>
+							<span>
+								<a href="">无敌小二</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">梦见海拉尔</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">我们的轨迹</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="water-running-block">
+				<div class="image-block">	
+					<img src="http://h.hiphotos.baidu.com/ting/s%3D210/sign=5342bfb2e4cd7b89ed6c3d823f244291/2f738bd4b31c870126ce0d9e257f9e2f0708ff4a.jpg" width="210" height="210">
+				</div>
+				<div class="message-content">
+					<h4 class="baidu-music-h">
+						<a href="">玄觞</a>
+					</h4>
+					<p class="singer-message">
+						<i class="listener-number"></i><span>45351</span>人
+						<i class="listen-time"></i><span>25038709</span>
+					</p>
+					<ul class="sing-list">
+						<li>
+							<span>
+								<a href="">原创✿黯然销魂</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">原创✿烽火入冬来</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">原创✿紫光</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="water-running-block">
+				<div class="image-block">	
+					<img src="http://f.hiphotos.baidu.com/ting/s%3D210/sign=9718ada3542c11dfdad1b82253266255/359b033b5bb5c9eae00f69a3d639b6003bf3b3f6.jpg" width="210" height="210">
+				</div>
+				<div class="message-content">
+					<h4 class="baidu-music-h">
+						<a href="">少司命</a>
+					</h4>
+					<p class="singer-message">
+						<i class="listener-number"></i><span>45351</span>人
+						<i class="listen-time"></i><span>25038709</span>
+					</p>
+					<ul class="sing-list">
+						<li>
+							<span>
+								<a href="">图腾纪</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">烟笼长安</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">小时候</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="water-running-block">
+				<div class="image-block">	
+					<img src="http://c.hiphotos.baidu.com/ting/s%3D210/sign=98d990860d24ab18e416e63605fbe69a/f9198618367adab480526ee38fd4b31c8601e494.jpg" width="210" height="210">
+				</div>
+				<div class="message-content">
+					<h4 class="baidu-music-h">
+						<a href="">箜篌引音乐工作室</a>
+					</h4>
+					<p class="singer-message">
+						<i class="listener-number"></i><span>45351</span>人
+						<i class="listen-time"></i><span>25038709</span>
+					</p>
+					<ul class="sing-list">
+						<li>
+							<span>
+								<a href="">又三年</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">黑暗复仇者</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">非狂</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="water-running-block">
+				<div class="image-block">	
+					<img src="http://e.hiphotos.baidu.com/ting/s%3D210/sign=150c1879334e251fe6f7e3f99787c9c2/e7cd7b899e510fb35b1ccdd4da33c895d1430c6f.jpg" width="210" height="210">
+				</div>
+				<div class="message-content">
+					<h4 class="baidu-music-h">
+						<a href="">CRITTY</a>
+					</h4>
+					<p class="singer-message">
+						<i class="listener-number"></i><span>45351</span>人
+						<i class="listen-time"></i><span>25038709</span>
+					</p>
+					<ul class="sing-list">
+						<li>
+							<span>
+								<a href="">剑可入鞘——剑网3《千里..</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">遇萤——橙光RPG剧情游戏..</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+						<li>
+							<span>
+								<a href="">青春不散</a>
+							</span>
+							<div class="play-icon">
+								<a href="">
+									<i class="music-play"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
