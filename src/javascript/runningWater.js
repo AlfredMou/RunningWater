@@ -94,16 +94,26 @@
 			this.rowNum=5||obj.num;//单行块的数目
 			this.xList=[];//各块x坐标的列表，由包含列表的块的宽度确定固定
 			this.yList=[];//最低层块的y坐标
-			this.rowWidth=obj.element.width()||obj.width;//获取单行宽度
+			this.blockDistance=obj.blockDistance||20;//y方向的块间距
+			this.rowWidth=obj.listWidth||obj.element.width();//获取单行宽度
 			this.oneXwidth=this.rowWidth/this.rowNum;//获取各块间距
+			console.log(this.oneXwidth);
 			this.element = obj.element;//容器元素
 			this.RunningWater=new RunningWater(obj);//所使用的runningWater对象
 			this.element.addClass('water-running');//为容器添加class
 			//处理初始块的坐标点x ，y
-			for(var i=0;i<this.rowNum;i++){ 
-				this.xList.push(i*this.oneXwidth);
-				this.yList.push(0);
+			if(obj.xList){
+				this.xList=obj.xList.slice(0);
+				for(var i=0;i<this.rowNum;i++){ 
+					this.yList.push(0);
+				}
+			}else{
+				for(var i=0;i<this.rowNum;i++){ 
+					this.xList.push(i*this.oneXwidth);
+					this.yList.push(0);
+				}
 			}
+			
 		}
 		function appendBlocksTolist(List){
 			var appendHtml="";
@@ -170,7 +180,7 @@
 				blockImg=$(computeDomList[i]).find('img').eq(0).attr("src");
 				// imageObj.src=blockImg;
 				// if(imageObj.readyState=="complete"){
-				this.yList[lastIndex]=lastY+$(computeDomList[i]).height()+20;
+				this.yList[lastIndex]=lastY+$(computeDomList[i]).height()+this.blockDistance;
 				// }else{
 				// 	this.yList[lastIndex]=lastY+$(computeDomList[i]).height()+210;
 				// }
@@ -217,6 +227,7 @@
 			objHandleAfter=handleArgumentObj.call(this,obj);
 			list  = new RunningWaterList(objHandleAfter);
 			// list.init();
+
 			if(windowLoaded){
 				list.init();
 				if(callBack instanceof Function){
@@ -229,7 +240,7 @@
 						callBack();
 					}
 					showAllBlock.call(list,0);
-				})
+				});
 			}
 			
 			// if(callBack instanceof Function){

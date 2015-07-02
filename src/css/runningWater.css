@@ -4,8 +4,8 @@ body{
 }
 .water-running{
 	width: 1200px;
-	padding-left: 15px;
-	padding-right: 15px;
+	/*padding-left: 15px;
+	padding-right: 15px;*/
 	margin: auto;
 	overflow: hidden;
 	position: relative;
@@ -17,8 +17,7 @@ body{
  	/*min-height: 300px;*/
  	border: 1px solid #DEDEDE;
  	float: left;
- 	margin-right: 30px;
-	margin-right: 30px;
+ 	/*margin-right: 30px;*/
 }
 .water-running .water-running-block .image-block{
 	width: 210px;

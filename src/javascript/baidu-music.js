@@ -98,6 +98,11 @@ var addPart=[{
 			}]
 var htmlModel="<div class='water-running-block'><div class='image-block'><img src='{image}' width='210' height='210'></div><div class='message-content'><h4 class='baidu-music-h'><a href='{singerUrl}'>{name}</a></h4><p class='singer-message'><i class='listener-number'></i><span>{listener}</span>人<i class='listen-time'></i><span>{listenTime}</span></p><ul class='sing-list'>[<li><span><a href='{songUrl}'>{songName}</a></span><div class='play-icon'><a href='{playUrl}'><i class='music-play'></i></a></div></li>]</ul></div></div>";
 $(function() {
-	var waterRunning=$(".water-running").runningWater({htmlModel:htmlModel});
+	var waterRunning=$(".water-running").runningWater({
+		htmlModel:htmlModel,
+		xList:[0,250,500,750,1000],
+		width:1200,
+		respond:true
+	});
 	waterRunning.appendBlocks(addPart);
 });
